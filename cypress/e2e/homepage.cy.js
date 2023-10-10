@@ -23,8 +23,7 @@ describe('homepage', () => {
 
     })  
 
-  describe("User can login", () => {
-    it.only("should enter valid credentials and successfully login", () => {
+    it("should enter valid credentials and successfully login", () => {
       cy
       .get('.sign-in-nav > .link-with-icon').click()
       .get('#gigya-modal-plugin-container-showScreenSet_content').should('be.visible')
@@ -36,31 +35,24 @@ describe('homepage', () => {
 
       
     })
-  })
-
-  describe("Dropdown options can be selected", () => {
+  
     it("should open the dropdown and select an option", () => {
       cy
       .get('#homepage-hero-breed-search-selectized').click()
       .get('[data-value="https://test-web.akc.org/dog-breeds/alaskan-klee-kai/"]').click()
       .title().should("include", "Alaskan Klee Kai")
         })
-  })
 
-  describe("body elements exist", () => {
     it("elements and url on the body should exist", () => {
       cy
       .get('#welcome > .interactive-hero__item-inner > .interactive-anchor')
       .get('.three > .interactive-hero__item-inner > .interactive-anchor')    
         })
-  })
 
-  describe("body elements exist", () => {
     it("elements and url on the body should exist", () => {
       cy
       .get('.content-card-grid > .grid > :nth-child(1) > .content-card > .content-card__body > .content-card__title')
       .get(':nth-child(4) > .content-card > .content-card__body > .content-card__title') 
         })
-  })
 
 })
